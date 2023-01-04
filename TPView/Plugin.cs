@@ -1,12 +1,19 @@
-﻿using BepInEx;
-using HarmonyLib;
-using UnityEngine;
+﻿using HarmonyLib;
 
-[BepInPlugin("miZyind.TPView", "TPView", "2023.01.04")]
-class TPView : BaseUnityPlugin
+class TPView : IModApi
 {
-    void Awake()
+    void IModApi.InitMod(Mod _modInstance)
     {
         Harmony.CreateAndPatchAll(typeof(TPView));
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(PlayerMoveController), "updateRespawn")]
+    static void updateRespawn(ref EntityPlayerLocal ___entityPlayerLocal)
+    {
+        if (___entityPlayerLocal.Spawned && ___entityPlayerLocal.bFirstPersonView)
+        {
+            ___entityPlayerLocal.SwitchFirstPersonView(true);
+        }
     }
 }

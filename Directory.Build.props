@@ -27,14 +27,12 @@
     <SteamFolder>C:\Program Files (x86)\Steam</SteamFolder>
     <GameFolder>$(SteamFolder)\steamapps\common\7 Days To Die</GameFolder>
     <ManagedFolder>$(GameFolder)\7DaysToDie_Data\Managed</ManagedFolder>
-    <BepInExFolder>$(GameFolder)\BepInEx</BepInExFolder>
-    <ModFolder>$(BepInExFolder)\plugins</ModFolder>
+    <ModFolder>$(GameFolder)\Mods</ModFolder>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine" HintPath="$(ManagedFolder)\UnityEngine.dll" />
     <Reference Include="UnityEngine.CoreModule" HintPath="$(ManagedFolder)\UnityEngine.CoreModule.dll" />
     <Reference Include="Assembly-CSharp" HintPath="$(ManagedFolder)\Assembly-CSharp.dll" />
-    <Reference Include="0Harmony20" HintPath="$(BepInExFolder)\core\0Harmony20.dll" />
-    <Reference Include="BepInEx" HintPath="$(BepInExFolder)\core\BepInEx.dll" />
+    <Reference Include="0Harmony" HintPath="$(ManagedFolder)\0Harmony.dll" />
   </ItemGroup>
 </Project>
