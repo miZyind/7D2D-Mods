@@ -1,7 +1,20 @@
 <Project>
   <Target Name="CopyModToInstallFolder" AfterTargets="Build">
-    <Copy
-      SourceFiles="$(TargetDir)\$(AssemblyName).dll"
-      DestinationFolder="$(ModFolder)\$(AssemblyName)" />
+    <PropertyGroup>
+      <ModInfo>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xml&gt;
+  &lt;ModInfo&gt;
+    &lt;Name value="$(AssemblyName)" /&gt;
+    &lt;Description value="$(Description)" /&gt;
+    &lt;Author value="miZyind" /&gt;
+    &lt;Version value="$(Version)" /&gt;
+    &lt;Website value="https://github.com/miZyind/7D2D-Mods" /&gt;
+  &lt;/ModInfo&gt;
+&lt;/xml&gt;
+      </ModInfo>
+    </PropertyGroup>
+    <Copy SourceFiles="$(TargetDir)\$(AssemblyName).dll" DestinationFolder="$(ModFolder)\$(AssemblyName)" />
+    <WriteLinesToFile File="$(ModFolder)\$(AssemblyName)\ModInfo.xml" Overwrite="true" Lines="$(ModInfo)" />
   </Target>
 </Project>
