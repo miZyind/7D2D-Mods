@@ -16,6 +16,7 @@
 2. Extract the contents into the game folder.
    - Windows default: `C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die`
 3. Make sure that you've disabled [EAC](https://www.easy.ac)
+4. Enjoy!
 
 ## 💠 Development Environment & Tools
 
