@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Configuration -->
+    <TargetFramework>net480</TargetFramework>
+    <RootNamespace>TPView</RootNamespace>
+    <!-- Information -->
+    <Version>2023.01.04</Version>
+    <Product>TPView</Product>
+    <AssemblyTitle>TPView</AssemblyTitle>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+    <InformationalVersion>$(Version)</InformationalVersion>
+    <Description>Third Person View</Description>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+</Project>
